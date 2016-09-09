@@ -54,7 +54,8 @@ function Handler(client, options) {
 	//
 
 	bangTimeStream.subscribe(message => {
-		client.say(this.settings.channel, '!speak ' + moment().format('LLLL'));
+		let sentence = '!speak It is ' + moment().format('h:m A on dddd, MMMM Do YYYY');
+		client.say(this.settings.channel, sentence);
 	});
 }
 
