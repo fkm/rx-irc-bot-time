@@ -7,7 +7,9 @@ const moment = require('moment');
 
 const RxbotLogger = require('rxbot-logger');
 
-let defaults = {};
+let defaults = {
+	logLevel: 'error'
+};
 
 function Handler(client, options) {
 	assert(this instanceof Handler);
@@ -23,6 +25,9 @@ function Handler(client, options) {
 	//
 
 	this.settings = Object.assign({}, defaults, options);
+
+	this.logger = new RxbotLogger();
+	this.logger.logLevel = this.settings.logLevel;
 
 	//  ____  _
 	// / ___|| |_ _ __ ___  __ _ _ __ ___  ___
@@ -54,8 +59,12 @@ function Handler(client, options) {
 	//
 
 	bangTimeStream.subscribe(message => {
+		this.logger.log('debug', 'About to announce the time to the channel.');
+
 		let sentence = '!speak It is ' + moment().format('h:m A on dddd, MMMM Do YYYY');
 		client.say(this.settings.channel, sentence);
+
+		this.logger.log('info', 'Told the time at: ' + moment().format('YY/MM/DD HH:mm:ss'));
 	});
 }
 
