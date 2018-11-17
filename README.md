@@ -1,4 +1,4 @@
-# rxbot-time
+# rx-irc-bot-time
 Time Accouncing Module for RxBot
 
 ## Installation
