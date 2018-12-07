@@ -8,4 +8,4 @@ Time Accouncing Module for RxBot
 4. Run the bot with `npm start`.
 
 ## License
-Copyright 2016, 2017 Florian Mäder - Permission granted under the [MIT license](LICENSE).
+Copyright 2016, 2017, 2018 Florian Mäder - Permission granted under the [MIT license](LICENSE).
