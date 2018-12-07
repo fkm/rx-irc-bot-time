@@ -1,5 +1,5 @@
 # RxBot Time
-* [Repository](https://github.com/fkm/rxbot-time)
+* [Repository](https://github.com/fkm/rx-irc-bot-time)
 
 ## Commands
 * `time (now)`
